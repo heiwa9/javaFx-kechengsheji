@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="754.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AMS.views.AdminFrame">
+   <children>
+      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" tabClosingPolicy="UNAVAILABLE">
+          <Tab text="档案管理">
+              <AnchorPane fx:id="archivesPanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <AnchorPane fx:id="archivesTableP" prefHeight="555.0" prefWidth="1080.0">
+                      <TableView fx:id="archivesTable" prefHeight="200.0" prefWidth="984.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                              <TableColumn prefWidth="170.0" text="档案号" />
+                              <TableColumn prefWidth="140.0" text="文号" />
+                              <TableColumn prefWidth="120.0" text="责任人" />
+                              <TableColumn prefWidth="350.0" text="题名" />
+                              <TableColumn prefWidth="50.0" text="密级" />
+                              <TableColumn prefWidth="50.0" text="类型" />
+                              <TableColumn prefWidth="120.0" text="收文时间" />
+                              <TableColumn prefWidth="75.0" text="保存期限" />
+                          </columns>
+                      </TableView>
+                  </AnchorPane>
+                  <Button layoutX="60.0" layoutY="600.0" mnemonicParsing="false" onAction="#archivesAddBtnOnAction" text="添加" />
+                  <Button layoutX="220.0" layoutY="600.0" mnemonicParsing="false" onAction="#archivesDeleteBtnOnAction" text="删除" />
+                  <Button layoutX="140.0" layoutY="600.0" mnemonicParsing="false" onAction="#archivesModifyBtnOnAction" text="修改" />
+                  <TextField fx:id="archivesSearchField" layoutX="370.0" layoutY="600.0" prefHeight="30.0" prefWidth="420.0" />
+                  <Button layoutX="966.0" layoutY="600.0" mnemonicParsing="false" onAction="#archivesSearchBtnOnAction" text="搜索/刷新" />
+               <ComboBox fx:id="queryComboBox" layoutX="830.0" layoutY="600.0" prefHeight="30.0" prefWidth="115.0" promptText="查询方式" />
+              </AnchorPane>
+          </Tab>
+          <Tab text="借阅记录">
+            <content>
+               <AnchorPane fx:id="recordsPanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                     <AnchorPane fx:id="recordTableP" prefHeight="555.0" prefWidth="1080.0">
+                        <children>
+                           <TableView fx:id="recordsTable" prefHeight="200.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <columns>
+                                 <TableColumn prefWidth="175.0" text="档案号" />
+                                 <TableColumn prefWidth="120.0" text="用户ID" />
+                                 <TableColumn prefWidth="120.0" text="借阅方式" />
+                                 <TableColumn prefWidth="120.0" text="借出时间" />
+                                 <TableColumn prefWidth="120.0" text="应还时间" />
+                              </columns>
+                           </TableView>
+                        </children>
+                     </AnchorPane>
+                     <Button layoutX="140.0" layoutY="600.0" mnemonicParsing="false" onAction="#recordDeleteBtnOnAction" text="删除" />
+                     <TextField fx:id="recordSearchField" layoutX="370.0" layoutY="600.0" prefHeight="30.0" prefWidth="493.0" />
+                     <Button layoutX="940.0" layoutY="600.0" mnemonicParsing="false" onAction="#recordSearchBtnOnAction" text="搜索/刷新" />
+                  </children>
+               </AnchorPane>
+            </content>
+         </Tab>
+          <Tab text="用户管理">
+              <AnchorPane fx:id="userPanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <AnchorPane fx:id="userTableP" prefHeight="555.0" prefWidth="1080.0">
+                      <TableView fx:id="userTable" prefHeight="200.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                              <TableColumn prefWidth="120.0" text="用户ID" />
+                              <TableColumn prefWidth="120.0" text="姓名" />
+                              <TableColumn prefWidth="75.0" text="性别" />
+                              <TableColumn prefWidth="120.0" text="单位" />
+                              <TableColumn prefWidth="120.0" text="部门" />
+                              <TableColumn prefWidth="120.0" text="电话" />
+                              <TableColumn prefWidth="120.0" text="密码" />
+                          </columns>
+                      </TableView>
+                  </AnchorPane>
+                  <Button layoutX="60.0" layoutY="600.0" mnemonicParsing="false" onAction="#userAddBtnOnAction" text="添加" />
+                  <Button layoutX="140.0" layoutY="600.0" mnemonicParsing="false" onAction="#userDeleteBtnOnAction" text="删除" />
+                  <TextField fx:id="userSearchField" layoutX="370.0" layoutY="600.0" prefHeight="30.0" prefWidth="421.0" />
+                  <Button layoutX="808.0" layoutY="600.0" mnemonicParsing="false" onAction="#userSearchBtnOnAction" text="搜索/刷新" />
+               <Button layoutX="220.0" layoutY="600.0" mnemonicParsing="false" onAction="#userModifyBtnOnAction" text="修改" />
+               <Button layoutX="914.0" layoutY="600.0" mnemonicParsing="false" onAction="#userSetManagerBtnOnAction" prefHeight="30.0" prefWidth="115.0" text="设置为管理员" />
+              </AnchorPane>
+          </Tab>
+          <Tab text="管理员设置">
+              <AnchorPane fx:id="mgrPanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <AnchorPane fx:id="mgrTableP" prefHeight="555.0" prefWidth="1087.0">
+                      <TableView fx:id="mgrTable" prefHeight="200.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                        <TableColumn prefWidth="120.0" text="用户ID" />
+                        <TableColumn prefWidth="120.0" text="姓名" />
+                        <TableColumn prefWidth="75.0" text="性别" />
+                        <TableColumn prefWidth="120.0" text="单位" />
+                        <TableColumn prefWidth="120.0" text="部门" />
+                        <TableColumn prefWidth="120.0" text="电话" />
+                        <TableColumn prefWidth="120.0" text="密码" />
+                          </columns>
+                      </TableView>
+                  </AnchorPane>
+                  <Button layoutX="60.0" layoutY="600.0" mnemonicParsing="false" onAction="#adminAddBtnOnAction" text="添加" />
+                  <Button layoutX="220.0" layoutY="600.0" mnemonicParsing="false" onAction="#adminDeleteBtnOnAction" text="删除" />
+                  <Button layoutX="140.0" layoutY="600.0" mnemonicParsing="false" onAction="#adminModifyBtnOnAction" text="修改" />
+                  <TextField fx:id="adminSearchField" layoutX="370.0" layoutY="600.0" prefHeight="30.0" prefWidth="493.0" />
+                  <Button layoutX="940.0" layoutY="600.0" mnemonicParsing="false" onAction="#adminSearchBtnOnAction" text="搜索/刷新" />
+              </AnchorPane>
+      
+                            </Tab>
+      </TabPane>
+         <Button fx:id="systemCloseBtn" layoutX="545.0" layoutY="720.0" mnemonicParsing="false" onAction="#systemCloseBtnOnAction" prefHeight="30.0" prefWidth="150.0" text="退出系统" />
+         <Button fx:id="systemExitBtn" layoutX="386.0" layoutY="720.0" mnemonicParsing="false" onAction="#systemExitBtnOnAction" prefHeight="30.0" prefWidth="150.0" text="退出登录" />
+   </children>
+</AnchorPane>

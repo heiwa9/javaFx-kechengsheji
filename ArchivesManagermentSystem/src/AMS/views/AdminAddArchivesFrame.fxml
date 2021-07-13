@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="491.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="AMS.views.AdminAddArchivesFrame">
+   <Button fx:id="archivesAddBtn" layoutX="138.0" layoutY="421.0" mnemonicParsing="false"
+           onAction="#archivesAddBtnOnAction" prefHeight="30.0" prefWidth="164.0" text="提交"/>
+   <Label layoutX="78.0" layoutY="77.0" text="档案号"/>
+   <Label layoutX="86.0" layoutY="117.0" text="文号"/>
+   <Label layoutX="79.0" layoutY="157.0" text="责任人"/>
+   <Label layoutX="86.0" layoutY="197.0" text="题名"/>
+   <Label layoutX="86.0" layoutY="237.0" text="密级"/>
+   <Label layoutX="72.0" layoutY="277.0" text="档案类型"/>
+   <Label layoutX="71.0" layoutY="317.0" text="收文时间"/>
+   <Label layoutX="71.0" layoutY="357.0" text="有效期限"/>
+   <TextField fx:id="fnField" layoutX="168.0" layoutY="72.0"/>
+   <TextField fx:id="wnField" layoutX="168.0" layoutY="112.0"/>
+   <TextField fx:id="responsibleField" layoutX="168.0" layoutY="152.0"/>
+   <TextField fx:id="titleField" layoutX="168.0" layoutY="192.0"/>
+   <TextField fx:id="classificationField" layoutX="168.0" layoutY="232.0"/>
+   <TextField fx:id="typeField" layoutX="167.0" layoutY="272.0"/>
+   <DatePicker fx:id="receivedtime" layoutX="168.0" layoutY="312.0" prefHeight="30.0" prefWidth="202.0"/>
+   <TextField fx:id="validityField" layoutX="167.0" layoutY="352.0"/>
+</AnchorPane>

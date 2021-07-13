@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AMS.views.UserFrame">
+    <Tab text="档案管理">
+        <AnchorPane fx:id="archivesPanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane fx:id="archivesTableP" prefHeight="555.0" prefWidth="1080.0">
+                <TableView fx:id="archivesTable" prefHeight="200.0" prefWidth="984.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                        <TableColumn prefWidth="175.0" text="档案号" />
+                        <TableColumn prefWidth="140.0" text="文号" />
+                        <TableColumn prefWidth="120.0" text="责任人" />
+                        <TableColumn prefWidth="350.0" text="题名" />
+                        <TableColumn prefWidth="50.0" text="密级" />
+                        <TableColumn prefWidth="50.0" text="类型" />
+                        <TableColumn prefWidth="120.0" text="收文时间" />
+                        <TableColumn prefWidth="75.0" text="保存期限" />
+                    </columns>
+                </TableView>
+            </AnchorPane>
+            <TextField fx:id="archivesSearchField" layoutX="36.0" layoutY="580.0" prefHeight="30.0" prefWidth="470.0" />
+            <Button layoutX="537.0" layoutY="625.0" mnemonicParsing="false" onAction="#archivesSearchBtnOnAction" prefHeight="30.0" prefWidth="117.0" text="搜索/刷新" />
+         <Button layoutX="946.0" layoutY="579.0" mnemonicParsing="false" onAction="#archivesBorrowBtnOnAction" prefHeight="76.0" prefWidth="111.0" text="借阅" />
+         <TextField fx:id="borrowDay" layoutX="818.0" layoutY="625.0" prefHeight="30.0" prefWidth="104.0" />
+         <Label layoutX="744.0" layoutY="585.0" text="借阅方式" />
+         <Label layoutX="744.0" layoutY="630.0" text="借阅天数" />
+         <ComboBox fx:id="comboBox" layoutX="819.0" layoutY="580.0" prefHeight="30.0" prefWidth="103.0" />
+         <Button fx:id="systemCloseBtn" layoutX="36.0" layoutY="625.0" mnemonicParsing="false" onAction="#systemCloseBtnOnAction" prefHeight="30.0" prefWidth="230.0" text="关闭系统" />
+         <Button fx:id="systemExitBtn" layoutX="277.0" layoutY="625.0" mnemonicParsing="false" onAction="#systemExitBtnOnAction" prefHeight="30.0" prefWidth="230.0" text="退出登录" />
+         <ComboBox fx:id="queryComboBox" layoutX="538.0" layoutY="580.0" prefHeight="30.0" prefWidth="115.0" promptText="查询方式" />
+        </AnchorPane>
+    </Tab>
+    <Tab text="用户设置">
+        <AnchorPane fx:id="userPanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane layoutX="320.0" layoutY="67.0" prefHeight="491.0" prefWidth="440.0">
+                <Label layoutX="79.0" layoutY="77.0" text="UserID" />
+                <Label layoutX="86.0" layoutY="117.0" text="姓名" />
+                <Label layoutX="87.0" layoutY="157.0" text="性别" />
+                <Label layoutX="86.0" layoutY="197.0" text="单位" />
+                <Label layoutX="86.0" layoutY="237.0" text="部门" />
+                <Label layoutX="87.0" layoutY="277.0" text="电话" />
+                <Label layoutX="87.0" layoutY="319.0" text="密码" />
+                <TextField fx:id="useridField" layoutX="168.0" layoutY="72.0" style="-fx-background-color: gray;" />
+                <TextField fx:id="usernameField" layoutX="168.0" layoutY="112.0" />
+                <TextField fx:id="genderField" layoutX="168.0" layoutY="152.0" />
+                <TextField fx:id="unitField" layoutX="168.0" layoutY="192.0" />
+                <TextField fx:id="departmentField" layoutX="168.0" layoutY="232.0" />
+                <TextField fx:id="telField" layoutX="167.0" layoutY="272.0" />
+                <TextField fx:id="passwordField" layoutX="167.0" layoutY="314.0" />
+                <Button fx:id="userUpdataBtn" layoutX="120.0" layoutY="405.0" mnemonicParsing="false" onAction="#userUpdateBtnOnAction" prefHeight="30.0" prefWidth="201.0" text="提交" />
+            </AnchorPane>
+        </AnchorPane>
+    </Tab>
+</TabPane>
